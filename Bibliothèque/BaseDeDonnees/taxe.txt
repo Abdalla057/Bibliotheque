@@ -1,0 +1,6 @@
+Retard && 1200.0 && 20 && non payé
+Retard && 1200.0 && 20 && payé
+Retard && 1200.0 && 20 && non payé
+Retard && 1200.0 && 20 && payé
+Retard && 1200.0 && 20 && non payé
+Retard && 1200.0 && 20 && payé
