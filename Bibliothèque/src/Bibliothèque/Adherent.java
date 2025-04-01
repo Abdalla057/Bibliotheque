@@ -33,7 +33,7 @@ public class Adherent {
 	// 1. Emprunter un document
     public boolean emprunter(Document document) {
         emprunts.add(new Emprunt(matricule, document, dateEmprunt, dateRetourPrevu));
-        System.out.println("📖 " + nom + " a emprunté '" + document.getTitre() + "' jusqu'au " + dateRetourPrevu);
+        System.out.println(" + nom + " a emprunté '" + document.getTitre() + "' jusqu'au " + dateRetourPrevu);
 		return false;
     }
 
@@ -42,7 +42,7 @@ public class Adherent {
         if (emprunts.isEmpty()) {
             System.out.println(nom + " n'a aucun emprunt en cours.");
         } else {
-            System.out.println("📚 Documents empruntés par " + nom + " :");
+            System.out.println(" Documents empruntés par " + nom + " :");
             for (Emprunt emprunt : emprunts) {
                 System.out.println("- " + emprunt.getDocument().getTitre() + " (Retour prévu : " + emprunt.getDateRetourPrevu() + ")");
             }
@@ -64,35 +64,35 @@ public class Adherent {
             if (joursDeRetard > 0) {
                 double amendeRetard = joursDeRetard * 1.0;
                 amende += amendeRetard;
-                System.out.println("⚠️ " + nom + " a rendu '" + document.getTitre() + "' avec " + joursDeRetard + " jours de retard. Amende de " + amendeRetard + "€ ajoutée.");
+                System.out.println(" + nom + " a rendu '" + document.getTitre() + "' avec " + joursDeRetard + " jours de retard. Amende de " + amendeRetard + "€ ajoutée.");
             }
 
             if (estAbime) {
                 amende += 5.0;
-                System.out.println("⚠️ Le document est abîmé. Amende de 5€ ajoutée.");
+                System.out.println(" Le document est abîmé. Amende de 5€ ajoutée.");
             }
 
             emprunts.remove(empruntTrouve);
-            System.out.println("✅ '" + document.getTitre() + "' a été rendu par " + nom);
+            System.out.println(" + document.getTitre() + "' a été rendu par " + nom);
         } else {
-            System.out.println("❌ " + nom + " n'a pas emprunté ce document.");
+            System.out.println(" + nom + " n'a pas emprunté ce document.");
         }
     }
 
     // 4. Réserver un document
     public void reserverDocument(Document document) {
         reservations.add(document);
-        System.out.println("🔖 " + nom + " a réservé le document : " + document.getTitre());
+        System.out.println("  + nom + " a réservé le document : " + document.getTitre());
     }
 
     // 5. Payer les taxes
     public void payerTaxes(double montant) {
         if (montant >= amende) {
-            System.out.println("✅ " + nom + " a payé toutes ses amendes (" + amende + "€).");
+            System.out.println(" + nom + " a payé toutes ses amendes (" + amende + "€).");
             amende = 0.0;
         } else {
             amende -= montant;
-            System.out.println("💰 " + nom + " a payé " + montant + "€. Reste à payer : " + amende + "€.");
+            System.out.println(" + nom + " a payé " + montant + "€. Reste à payer : " + amende + "€.");
         }
     }
     
